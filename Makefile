@@ -1,15 +1,19 @@
 CC = gcc
 CFLAGS = -Wall -Wextra
+SRCS = main.c auxiliar_functs.c
+OBJ = $(SRCS:.c=.o)
+BIN = shell_exp
+
 
 .PHONY: all clean
 
-all: shell_exp
+all: $(BIN)
 
-shell_exp: main.o
-	$(CC) -o $@ $^
+$(BIN): $(OBJ)
+	$(CC) $^ -o $@
 
 %.o: %.c
-	$(CC) -o $@ $< $(CFLAGS)
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean: 
-	rm -f main.o shell_exp
+	rm -f $(OBJ) $(BIN)
