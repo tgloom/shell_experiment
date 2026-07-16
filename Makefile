@@ -24,9 +24,6 @@ $(BIN): $(OBJ)
 debug: $(OBJ_DEBUG)
 	$(CC) $^ -o $(BIN_DEBUG)
 
-clean: 
-	rm -f $(OBJ) $(BIN) $(BIN_DEBUG) $(OBJ_DEBUG)
-
 rebuild_release:
 	make clean
 	make all
@@ -34,3 +31,6 @@ rebuild_release:
 rebuild_debug:
 	make clean
 	make debug
+clean: 
+	rm -f $(OBJ) $(BIN) $(BIN_DEBUG) $(OBJ_DEBUG)
+
