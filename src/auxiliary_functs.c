@@ -4,7 +4,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include "./auxiliar_functs.h"
+#include "./auxiliary_functs.h"
 #define buff_size 256
 
 int IsEndWord(char c)
